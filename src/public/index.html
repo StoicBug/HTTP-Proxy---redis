@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTP Proxy</title>
+</head>
+<body>
+    <h1>Implementing Redis</h1>
+
+    <button onclick="sendRequests(100)">Request Data</button>
+
+    <script>
+        async function sendRequests(numberOfRequests) {
+            // loop through the number of requests
+            for (let i = 0; i < numberOfRequests; i++) {
+                // fetch the data from the server
+                const response = await fetch('http://localhost:3000/posts');
+                // convert the response to json
+                const data = await response.json();
+                // log the data
+                console.log(data);
+            }
+        }
+    </script>
+</body>
+</html>
